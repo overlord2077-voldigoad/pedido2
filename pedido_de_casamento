@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Casamento para Joseane</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .yes-btn {
+            background-color: #28a745;
+            color: white;
+        }
+        .no-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1.1em;
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Um Pedido Especial para Joseane</h1>
+        <p>Desde o momento que te conheci, eu sabia que você era especial. Agora, só me resta fazer a pergunta mais importante de todas:</p>
+        <h2>Joseane, você quer se casar comigo?</h2>
+
+        <form id="pedidoForm">
+            <button type="button" class="yes-btn" onclick="responder('sim')">Sim, quero!</button>
+            <button type="button" class="no-btn" onclick="responder('nao')">Não estou pronta</button>
+        </form>
+
+        <div id="resposta" style="display: none;">
+            <h2 id="respostaTitulo"></h2>
+            <p id="respostaMensagem"></p>
+            <a href="javascript:location.reload();">Fazer o pedido novamente</a>
+        </div>
+    </div>
+
+    <script>
+        function responder(resposta) {
+            document.getElementById('pedidoForm').style.display = 'none';
+            document.getElementById('resposta').style.display = 'block';
+            if (resposta === 'sim') {
+                document.getElementById('respostaTitulo').innerText = 'Sim, você me fez a pessoa mais feliz do mundo!';
+                document.getElementById('respostaMensagem').innerText = 'Agora, vamos começar nossa vida juntos com muito amor e felicidade.';
+            } else {
+                document.getElementById('respostaTitulo').innerText = 'Oh não...';
+                document.getElementById('respostaMensagem').innerText = 'Entendo que você não está pronta, e tudo bem. Estarei sempre esperando por você quando estiver preparada.';
+            }
+        }
+    </script>
+</body>
+</html>
